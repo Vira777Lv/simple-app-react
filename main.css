@@ -1,0 +1,74 @@
+body
+{
+	display: flex;
+	justify-content: center;
+	background: url(images/bg-spa.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: rgba(0, 204, 102, .8);
+	font-family: sans-serif;
+}
+
+article
+{
+	margin: 10px auto;
+	padding: 40px;
+	width: 600px;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	border-radius: 3px;
+}
+
+article h1
+{
+	font-size: 25px;
+	color: rgb(255, 133, 51);
+}
+
+p
+{
+	margin-top: 20px;
+}
+
+.logo
+{
+ 	margin: 20px;
+ 	font-size: 35px;
+}
+.navigation
+{
+	display: flex;
+	justify-content: flex-end;
+	width: 90vw;
+	height: 60px;
+	line-height: 60px;
+	background: rgba(0, 0, 0, .3);
+	color: rgb(255, 51, 0);
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.list a
+{
+	padding: 0 25px;
+	color: rgb(255, 133, 51);
+}
+
+.list:hover
+{
+	background: rgba(0, 0, 0, .8);
+	cursor: pointer;
+}
+
+.active
+{
+	background: rgba(0, 204, 102, .3);
+	transition: background-color .3s;
+}
+
+.content
+{
+	
+	color: rgba(0, 179, 179, 1);
+	line-height: 1.5em;
+}

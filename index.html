@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SPA</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="main.css">
+
+	<script src="https://npmcdn.com/react@15.3.0/dist/react.js"></script>
+	<script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+	<script src="https://npmcdn.com/react-router/umd/ReactRouter.min.js"></script>
+</head>
+<body>
+	<div id="container"></div>
+
+	<script type="text/babel">
+		const app = document.querySelector("#container");
+		const {
+				Router,
+				Route,
+				IndexRoute,
+				IndexLink,
+				Link
+				} = ReactRouter;
+
+		let HTML = React.createClass({
+			render() {
+				return (
+					<article>
+						<h1>What is HTML?</h1>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Duis viverra urna id turpis semper tempus. Aliquam erat volutpat.
+							Proin consequat condimentum mi non pulvinar.
+							Praesent ullamcorper fringilla est nec gravida.
+							Ut facilisis, massa a faucibus suscipit, purus lacus efficitur enim,
+							vehicula malesuada magna ante vitae mauris.
+							Praesent aliquet magna vitae hendrerit vehicula.
+							Pellentesque sit amet placerat erat, vel bibendum felis.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Duis viverra urna id turpis semper tempus. Aliquam erat volutpat.
+							Proin consequat condimentum mi non pulvinar.
+							Praesent ullamcorper fringilla est nec gravida.
+						</p>
+					</article>
+				);
+			}
+		});
+		
+		let CSS = React.createClass({
+			render() {
+				return (
+					<article>
+						<h1>What is CSS?</h1>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Duis viverra urna id turpis semper tempus. Aliquam erat volutpat.
+							Proin consequat condimentum mi non pulvinar.
+							Praesent ullamcorper fringilla est nec gravida.
+							Ut facilisis, massa a faucibus suscipit, purus lacus efficitur enim,
+							vehicula malesuada magna ante vitae mauris.
+							Praesent aliquet magna vitae hendrerit vehicula.
+							Pellentesque sit amet placerat erat, vel bibendum felis.
+						</p>
+					</article>
+				);
+			}
+		});
+
+		let JS = React.createClass({
+			render() {
+				return (
+					<article>
+						<h1>What is JavaScript?</h1>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Duis viverra urna id turpis semper tempus. Aliquam erat volutpat.
+							Proin consequat condimentum mi non pulvinar.
+							Praesent ullamcorper fringilla est nec gravida.
+							Ut facilisis, massa a faucibus suscipit, purus lacus efficitur enim,
+							vehicula malesuada magna ante vitae mauris.
+							Praesent aliquet magna vitae hendrerit vehicula.
+							Pellentesque sit amet placerat erat, vel bibendum felis.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Duis viverra urna id turpis semper tempus. Aliquam erat volutpat.
+							Proin consequat condimentum mi non pulvinar.
+							Praesent ullamcorper fringilla est nec gravida.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Duis viverra urna id turpis semper tempus. Aliquam erat volutpat.
+							Proin consequat condimentum mi non pulvinar.
+							Praesent ullamcorper fringilla est nec gravida.
+						</p>
+					</article>
+				);
+			}
+		});
+
+		let App = React.createClass({
+			render() {
+				return (
+					<div>
+						<header className="primary-menu">
+							<h1 className="logo">Simple SPA</h1>
+							<nav>
+								<ul className="navigation">
+									<li className="list">
+										<IndexLink to="/" activeClassName="active">HTML</IndexLink>
+									</li>
+									<li className="list">
+										<Link to="/css" activeClassName="active">CSS</Link>
+									</li>
+									<li className="list">
+										<Link to="/js" activeClassName="active">JavaScript</Link>
+									</li>
+								</ul>
+							</nav>
+						</header>
+
+						<section className="content">
+							{this.props.children}
+						</section>
+					</div>
+				)
+			}
+		});
+
+		ReactDOM.render(
+			<Router>
+				<Route path="/" component={ App }>
+					<IndexRoute component={ HTML }/>
+					<Route path="css" component={CSS} />
+					<Route path="js" component={JS} />
+				</Route>
+			</Router>,
+
+			app
+		);
+	</script>
+</body>
+</html>
+
